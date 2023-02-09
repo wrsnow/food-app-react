@@ -19,7 +19,7 @@ const MainWrapper = ({ total, setTotal }: Props) => {
   return (
     <div className={styles.main_wrapper}>
       <div className={styles.bg_image}>
-        <img src="/assets/rachel-park-hrlvr2ZlUNk-unsplash.jpg" alt="" />
+        <img src="./assets/rachel-park-hrlvr2ZlUNk-unsplash.jpg" alt="" />
       </div>
       <div className={styles.content}>
         {Food_Menu.map((food: FoodMenu) => {
