@@ -1,0 +1,123 @@
+.nav {
+  min-height: 70px;
+  color: #202020;
+  background-color: #bd9a63;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8rem;
+}
+
+.nav_logo {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+.nav_logo:any-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* CART BUTTON AND DROPDOWN MENU */
+.cart_wrapper {
+  position: relative;
+  margin-right: 4rem;
+}
+.cart_wrapper > button {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  transition: 400ms;
+}
+.cart_wrapper > button:hover {
+  transform: scale(1.1);
+}
+.cart_wrapper > button > span {
+  font-size: 1rem;
+  position: absolute;
+  top: calc(100% - 1.475rem);
+  left: calc(100% + 0.8rem);
+  font-weight: bold;
+  background-color: #202020;
+  color: #fff;
+  border-radius: 50%;
+  width: 1.8rem;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 100px;
+}
+.dropdown ul {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem 0;
+  background-color: #820000;
+  border-radius: 4px;
+}
+.dropdown ul > li {
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.dropdown ul > li:hover:not(:last-child) {
+  color: #820000;
+  background-color: #fff;
+}
+
+.dropdown ul > li .cart_item {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 2px;
+}
+.dropdown ul > li .cart_item span:first-child {
+  margin-right: 4rem;
+}
+.dropdown ul > li .cart_item span:nth-child(2) {
+  margin-left: auto;
+}
+.dropdown.active {
+  display: block;
+}
+
+.cart_total {
+  display: flex;
+}
+.cart_total > strong {
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.complete_btn {
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 2px;
+  background-color: #7d2323;
+  border: 1px solid #d67474;
+  color: #fff;
+}
+
+.complete_btn:hover {
+  background-color: #a94242;
+}
+.complete_btn:active {
+  background-color: #d44242;
+}
+/* END */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 2rem;
+  }
+}

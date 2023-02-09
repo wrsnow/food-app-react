@@ -1,0 +1,27 @@
+.main_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+  background-color: #4e6c50;
+  min-height: 100vh;
+  padding-bottom: 10rem;
+}
+.bg_image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.bg_image > img {
+}
+.content {
+  color: black;
+  margin-top: 3rem;
+  min-width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}

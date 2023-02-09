@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(0deg, #820000, #742b2b);
+  color: #fff;
+}
+img,
+picture,
+svg,
+video {
+  width: 100%;
+  display: block;
+}
