@@ -1,7 +1,7 @@
 .nav {
-  min-height: 70px;
+  min-height: 90px;
   color: #202020;
-  background-color: #bd9a63;
+  background-color: var(--color1-100);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,6 +11,7 @@
 .nav_logo {
   text-transform: uppercase;
   font-size: 1.8rem;
+  font-weight: 600;
 }
 .nav_logo:any-link {
   text-decoration: none;
@@ -34,7 +35,7 @@
   transform: scale(1.1);
 }
 .cart_wrapper > button > span {
-  font-size: 1rem;
+  font-size: 0.8rem;
   position: absolute;
   top: calc(100% - 1.475rem);
   left: calc(100% + 0.8rem);
@@ -42,7 +43,7 @@
   background-color: #202020;
   color: #fff;
   border-radius: 50%;
-  width: 1.8rem;
+  width: 2rem;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
@@ -50,31 +51,29 @@
 }
 
 .dropdown {
+  color: var(--color-dark);
   display: none;
   position: absolute;
   top: 100%;
   right: 0;
-  min-width: 100px;
+  min-width: 160px;
+  padding: 0.6rem;
 }
 .dropdown ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 1rem 0;
-  background-color: #820000;
+  padding: 1.4rem 1rem;
+  background-color: var(--color-accent-2);
   border-radius: 4px;
 }
 .dropdown ul > li {
-  color: #fff;
   cursor: pointer;
   padding: 0.5rem;
 }
-.dropdown ul > li:hover:not(:last-child) {
-  color: #820000;
-  background-color: #fff;
-}
 
 .dropdown ul > li .cart_item {
+  font-weight: 500;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -104,16 +103,15 @@
   width: 100%;
   padding: 0.5rem 0.4rem;
   border-radius: 2px;
-  background-color: #7d2323;
-  border: 1px solid #d67474;
+  background-color: var(--color-dark);
   color: #fff;
 }
 
 .complete_btn:hover {
-  background-color: #a94242;
+  background-color: var(--color1-200);
 }
 .complete_btn:active {
-  background-color: #d44242;
+  background-color: var(--color1-300);
 }
 /* END */
 @media (max-width: 768px) {

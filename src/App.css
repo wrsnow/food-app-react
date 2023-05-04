@@ -1,3 +1,15 @@
+:root {
+  --color1-600: #d93d04;
+  --color1-400: #f25c05;
+  --color1-300: #f27405;
+  --color1-200: #f3923d;
+  --color1-100: #ffbe85;
+  --color-accent: #d7d2d9;
+  --color-accent-2: #b6b3b8;
+  --color-accent-3: #908d92;
+  --color-dark: #0d0d0d;
+}
+
 *,
 *::before,
 *::after {
@@ -13,6 +25,8 @@ body {
   min-height: 100vh;
   background: linear-gradient(0deg, #820000, #742b2b);
   color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 img,
 picture,

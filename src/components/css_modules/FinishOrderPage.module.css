@@ -54,16 +54,15 @@
   width: 100%;
   padding: 0.5rem 0.4rem;
   border-radius: 2px;
-  background-color: #7d2323;
-  border: 1px solid #d67474;
+  background-color: var(--color-dark);
   color: #fff;
 }
 
 .total .confirm_btn:hover {
-  background-color: #a94242;
+  background-color: var(--color1-200);
 }
 .total .confirm_btn:active {
-  background-color: #d44242;
+  background-color: var(--color1-300);
 }
 
 @media (max-width: 600px) {

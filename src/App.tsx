@@ -8,6 +8,8 @@ import ModalContextProvider from "./components/context/ModalContext";
 import ModalContainer from "./components/Modal";
 import Processing from "./components/Processing";
 
+// TODO: Find smaller images and add to the static database.
+
 function App() {
   const [total, setTotal] = useState<Quantity[]>([
     { id: "", name: "", quantity: 0, price: 0 },

@@ -5,8 +5,9 @@ import styles from "./css_modules/Card.module.css";
 type Props = {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   price: number;
+  img?: string;
   total: Quantity[];
   setTotal: React.Dispatch<React.SetStateAction<Quantity[]>>;
 };
@@ -61,6 +62,7 @@ const Card = (props: Props) => {
 
   return (
     <div className={styles.card}>
+      <img src={props.img} alt={props.name} width={200} loading="lazy" />
       <div className={styles.food_info}>
         <h3>{props.name}</h3>
         <p>{props.description}</p>

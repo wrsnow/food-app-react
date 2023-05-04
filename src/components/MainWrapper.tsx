@@ -2,13 +2,15 @@ import Card from "./Card";
 import styles from "./css_modules/MainWrapper.module.css";
 import { Quantity } from "./Card";
 import Food_Menu from "./db/Food_Menu";
+import FastFoodJSON from "./db/FastFoodJSON";
 
 export interface FoodMenu {
   id: string;
-  foodName: string;
+  name: string;
   price: number;
-  description: string;
 }
+
+type JSONData = typeof FastFoodJSON;
 
 type Props = {
   total: Quantity[];
@@ -18,18 +20,18 @@ type Props = {
 const MainWrapper = ({ total, setTotal }: Props) => {
   return (
     <div className={styles.main_wrapper}>
-      <div className={styles.bg_image}>
+      {/* <div className={styles.bg_image}>
         <img src="./assets/rachel-park-hrlvr2ZlUNk-unsplash.jpg" alt="" />
-      </div>
+      </div> */}
       <div className={styles.content}>
-        {Food_Menu.map((food: FoodMenu) => {
+        {FastFoodJSON.map((food) => {
           return (
             <Card
               key={food.id}
-              id={food.id}
-              name={food.foodName}
+              id={String(food.id)}
+              name={food.name}
+              img={food.image}
               price={food.price}
-              description={food.description}
               total={total}
               setTotal={setTotal}
             />

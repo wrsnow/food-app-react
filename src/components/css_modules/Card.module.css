@@ -1,13 +1,25 @@
 .card {
   width: 100%;
-  min-height: 120px;
-  background-color: #f2deba;
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: #f1f1f1;
   display: flex;
   align-items: center;
+  text-align: center;
+  flex-direction: column;
   justify-content: space-between;
   padding: 0 1rem;
-  border-radius: 2px;
+  border-radius: 6px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.515);
+  padding: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  gap: 0.3rem;
+}
+
+.card img {
+  border-radius: inherit;
+  flex: 1;
 }
 
 .card > .food_info {
@@ -15,14 +27,15 @@
   flex-direction: column;
 }
 .card > .food_info > h3 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 .card > .food_info > p {
   word-break: break-all;
   font-size: 1rem;
-  font-style: italic;
+  display: none;
 }
 .card .food_info .price {
+  display: block;
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -52,8 +65,8 @@
   border: 1px solid rgb(64, 64, 64, 0.2);
 }
 .card > .actions > button:hover {
-  background-color: #dbf8dd;
+  background-color: var(--color1-100);
 }
 .card > .actions > button:active {
-  background-color: #94f59b;
+  background-color: var(--color1-200);
 }
