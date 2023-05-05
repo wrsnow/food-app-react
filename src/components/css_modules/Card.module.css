@@ -20,6 +20,7 @@
 .card img {
   border-radius: inherit;
   flex: 1;
+  aspect-ratio: 16/9;
 }
 
 .card > .food_info {
