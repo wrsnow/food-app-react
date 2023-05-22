@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "./css_modules/Navbar.module.css";
 import { BsCart4 } from "react-icons/bs";
-import { Quantity } from "./Card";
-import CartDropdown from "./CartDropdown";
+import CartDropdown from "./Cart/CartDropdown";
+import { CartContext } from "../context/ShoppingCartContext";
 
 type Props = {
   setIsLoading: (load: boolean) => void;
-  total: Quantity[];
 };
 
 const Navbar = (props: Props) => {
+  const { cartItems } = useContext(CartContext);
   const [isDropdownActive, setIsDropdownActive] = useState<boolean>(false);
 
-  const totalQuantity = props.total.reduce((acc, val) => acc + val.quantity, 0);
-  const totalValue = props.total.reduce(
-    (acc, val) => acc + val.quantity * val.price,
+  const totalQuantity = Array.from(cartItems.values()).reduce(
+    (a, b) => a + b,
     0
   );
 
@@ -31,9 +30,6 @@ const Navbar = (props: Props) => {
         <CartDropdown
           setIsLoading={props.setIsLoading}
           isDropdownActive={isDropdownActive}
-          total={props.total}
-          totalQuantity={totalQuantity}
-          totalValue={totalValue}
         />
       </div>
     </nav>

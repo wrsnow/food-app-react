@@ -1,6 +1,6 @@
 import { ReactNode, useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { ModalContext } from "./context/ModalContext";
+import { ModalContext } from "../context/ModalContext";
 import styles from "./css_modules/Modal.module.css";
 
 type Props = {

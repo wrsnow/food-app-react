@@ -1,80 +1,42 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import { BsDashLg, BsPlusLg } from "react-icons/bs";
 import styles from "./css_modules/Card.module.css";
+import { CartContext } from "../context/ShoppingCartContext";
 
 type Props = {
-  id: string;
   name: string;
   description?: string;
   price: number;
   img?: string;
-  total: Quantity[];
-  setTotal: React.Dispatch<React.SetStateAction<Quantity[]>>;
 };
 
-export type Quantity = {
-  id: string;
-  name: string;
-  quantity: number;
-  price: number;
-};
-const Card = (props: Props) => {
-  const [foodQuantity, setFoodQuantity] = useState<Quantity>({
-    id: props.id,
-    name: props.name,
-    quantity: 0,
-    price: props.price,
-  });
-
-  useEffect(() => {
-    let timeout = setTimeout(() => {
-      let arr = props.total;
-      let findIndex = arr.findIndex((item) => item.id === foodQuantity.id);
-      if (findIndex >= 0) {
-        arr = arr.map((item, idx) => (idx === findIndex ? foodQuantity : item));
-        props.setTotal(arr);
-        sessionStorage.setItem("cart_items", JSON.stringify(arr));
-      } else {
-        arr.push(foodQuantity);
-        props.setTotal(arr);
-      }
-    }, 200);
-    return () => clearTimeout(timeout);
-  }, [foodQuantity]);
+const Card = ({ name, price, description, img }: Props) => {
+  const { cartItems, addToCart, removeFromCart, clearCart } =
+    useContext(CartContext);
 
   function addCurrentItem() {
-    setFoodQuantity((prev: Quantity) => {
-      return {
-        ...prev,
-        quantity: prev.quantity + 1,
-      };
-    });
+    addToCart(name);
   }
   function removeCurrentItem() {
-    if (foodQuantity.quantity === 0) return;
-    setFoodQuantity((prev: Quantity) => {
-      return {
-        ...prev,
-        quantity: prev.quantity - 1,
-      };
-    });
+    removeFromCart(name);
   }
+
+  const foodQuantity = cartItems.get(name) ?? 0;
 
   return (
     <div className={styles.card}>
-      <img src={props.img} alt={props.name} width={200} loading="lazy" />
+      <img src={img} alt={name} width={200} loading="lazy" />
       <div className={styles.food_info}>
-        <h3>{props.name}</h3>
-        <p>{props.description}</p>
-        <p className={styles.price}>${props.price}</p>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <p className={styles.price}>${price}</p>
       </div>
       <div className={styles.actions}>
         <button onClick={removeCurrentItem}>
           <BsDashLg />
         </button>
         <span>
-          Quantity:{" "}
-          <strong className={styles.quantity}>{foodQuantity.quantity}</strong>
+          Quantity: <strong className={styles.quantity}>{foodQuantity}</strong>
         </span>
         <button onClick={addCurrentItem}>
           <BsPlusLg />

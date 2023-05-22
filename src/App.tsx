@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Quantity } from "./components/Card";
 import MainWrapper from "./components/MainWrapper";
 import FinishOrderPage from "./components/FinishOrderPage";
-import ModalContextProvider from "./components/context/ModalContext";
+import ModalContextProvider from "./context/ModalContext";
 import ModalContainer from "./components/Modal";
 import Processing from "./components/Processing";
 
 // TODO: Find smaller images and add to the static database.
 
 function App() {
-  const [total, setTotal] = useState<Quantity[]>([
-    { id: "", name: "", quantity: 0, price: 0 },
-  ]);
-
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,11 +22,11 @@ function App() {
   return (
     <>
       <ModalContextProvider>
-        <Navbar setIsLoading={setIsLoading} total={total} />
-        <MainWrapper total={total} setTotal={setTotal} />
+        <Navbar setIsLoading={setIsLoading} />
+        <MainWrapper />
         {!isLoading && (
           <ModalContainer>
-            <FinishOrderPage total={total} />
+            <FinishOrderPage />
           </ModalContainer>
         )}
         {isLoading && <Processing />}
