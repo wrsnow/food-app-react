@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ModalContext } from "../../context/ModalContext";
 import { CartContext } from "../../context/ShoppingCartContext";
-import styles from "./css_modules/Navbar.module.css";
+import styles from "../css_modules/Navbar.module.css";
 import CartTotal from "./CartTotal";
 import getTotalPrice from "../../utils/getTotalPrice";
 

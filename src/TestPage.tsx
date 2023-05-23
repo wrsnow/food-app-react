@@ -5,7 +5,7 @@ function TestPage() {
   const { cartItems, addToCart, removeFromCart, clearCart } =
     useContext(CartContext);
 
-  const foodOptions = ["McCheese", "Pizza", "Chicken"];
+  const foodOptions = ["Apple"];
 
   function add() {
     const randomOpt = Math.floor(Math.random() * foodOptions.length);
@@ -22,7 +22,13 @@ function TestPage() {
       <button onClick={remove}>REMOVE</button>
       <button onClick={clearCart}>CLEAR</button>
 
-      <p>{cartItems}</p>
+      {cartItems.size > 0 ? (
+        <p data-testid="paragraph">
+          Cart Items: {Array.from(cartItems.keys()).join(",")}
+        </p>
+      ) : (
+        <p data-testid="paragraph">Cart is empty</p>
+      )}
 
       <hr />
       <div></div>

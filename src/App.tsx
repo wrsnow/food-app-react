@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import MainWrapper from "./components/MainWrapper";
 import FinishOrderPage from "./components/FinishOrderPage";

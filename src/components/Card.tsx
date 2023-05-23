@@ -24,7 +24,7 @@ const Card = ({ name, price, description, img }: Props) => {
   const foodQuantity = cartItems.get(name) ?? 0;
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-testid="product">
       <img src={img} alt={name} width={200} loading="lazy" />
       <div className={styles.food_info}>
         <h3>{name}</h3>
