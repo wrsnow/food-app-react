@@ -2,14 +2,14 @@ import { useState, useContext } from "react";
 import styles from "./css_modules/Navbar.module.css";
 import { BsCart4 } from "react-icons/bs";
 import CartDropdown from "./Cart/CartDropdown";
-import { CartContext } from "../context/ShoppingCartContext";
+import { useCartCtx } from "../context/ShoppingCartContext";
 
 type Props = {
   setIsLoading: (load: boolean) => void;
 };
 
 const Navbar = (props: Props) => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCartCtx();
   const [isDropdownActive, setIsDropdownActive] = useState<boolean>(false);
 
   const totalQuantity = Array.from(cartItems.values()).reduce(

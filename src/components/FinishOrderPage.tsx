@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
 import { ModalContext } from "../context/ModalContext";
 import styles from "./css_modules/FinishOrderPage.module.css";
-import { CartContext } from "../context/ShoppingCartContext";
+import { useCartCtx } from "../context/ShoppingCartContext";
 import getTotalPrice from "../utils/getTotalPrice";
 
 const FinishOrderPage = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCartCtx();
   const totalPrice = getTotalPrice();
 
   const modalCTX = useContext(ModalContext);

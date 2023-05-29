@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import styles from "../css_modules/Navbar.module.css";
-import { CartContext } from "../../context/ShoppingCartContext";
+import { useCartCtx } from "../../context/ShoppingCartContext";
 
 function CartTotal() {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCartCtx();
 
   return (
     <>

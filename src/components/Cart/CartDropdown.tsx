@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ModalContext } from "../../context/ModalContext";
-import { CartContext } from "../../context/ShoppingCartContext";
+import { useCartCtx } from "../../context/ShoppingCartContext";
 import styles from "../css_modules/Navbar.module.css";
 import CartTotal from "./CartTotal";
 import getTotalPrice from "../../utils/getTotalPrice";
@@ -12,7 +12,7 @@ type Props = {
 
 const CartDropdown = ({ isDropdownActive, setIsLoading }: Props) => {
   const modalCtx = useContext(ModalContext);
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCartCtx();
   const totalPrice = getTotalPrice();
 
   function confirmAction(): void {

@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { BsDashLg, BsPlusLg } from "react-icons/bs";
 import styles from "./css_modules/Card.module.css";
-import { CartContext } from "../context/ShoppingCartContext";
+import { useCartCtx } from "../context/ShoppingCartContext";
 
 type Props = {
   name: string;
@@ -11,8 +11,7 @@ type Props = {
 };
 
 const Card = ({ name, price, description, img }: Props) => {
-  const { cartItems, addToCart, removeFromCart, clearCart } =
-    useContext(CartContext);
+  const { cartItems, addToCart, removeFromCart, clearCart } = useCartCtx();
 
   function addCurrentItem() {
     addToCart(name);

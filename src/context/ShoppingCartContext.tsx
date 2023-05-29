@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const initialState = new Map<string, number>();
 
@@ -65,3 +65,5 @@ export function CartContextProvider({
     </CartContext.Provider>
   );
 }
+
+export const useCartCtx = () => useContext(CartContext);
